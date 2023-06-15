@@ -15,6 +15,14 @@ def fibonacci(n):
             fib.append(fib[-1] + fib[-2])
         return fib
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+@app.route('/about')
+def about():
+    return 'About'
+
 @app.route('/fibonacci/<int:n>')
 def get_fibonacci(n):
     fib_seq = fibonacci(n)
